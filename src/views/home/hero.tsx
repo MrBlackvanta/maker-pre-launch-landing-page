@@ -5,7 +5,7 @@ import { ScrollIcon } from "@/components/icons";
 export default function Hero() {
   return (
     <section className="relative mt-16 overflow-x-clip md:mt-19 lg:mt-28.5">
-      <div className="v-hero-squiggle absolute top-8.5 left-1/2 -z-10 hidden aspect-[545/379] w-96.5 -translate-x-1/2 md:block lg:-top-4 lg:w-136" />
+      <div className="v-hero-squiggle absolute top-8.5 left-1/2 -z-10 hidden aspect-545/379 w-96.5 -translate-x-1/2 md:block lg:-top-4 lg:w-136" />
       <div className="md:grid md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:items-center md:gap-x-2.5">
         <picture className="md:v-hero-art-left block w-[110%] max-w-none md:justify-self-end">
           <source
@@ -38,7 +38,7 @@ export default function Hero() {
           </p>
           <ScrollIcon className="text-brand mx-auto mt-8 w-6.5 lg:mt-16" />
         </div>
-        <div className="v-hero-art-right hidden aspect-[33/37] md:block md:justify-self-start" />
+        <div className="v-hero-art-right hidden aspect-33/37 md:block md:justify-self-start" />
       </div>
     </section>
   );
