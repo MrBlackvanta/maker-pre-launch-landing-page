@@ -12,7 +12,7 @@ const shareImage = {
   url: "/opengraph-image.jpg",
   width: 1200,
   height: 630,
-  alt: "The maker logo above the line Get paid for the work you love.",
+  alt: "The maker home page beside the product name and the line Turn your passions into income.",
 };
 
 const manrope = Manrope({

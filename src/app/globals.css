@@ -7,6 +7,7 @@
   --color-ink: #080c20;
   --color-brand: #3ee9e5;
   --color-panel: #093f68;
+  --color-panel-lift: #184b71;
   --color-muted: #798199;
   --color-danger: #ff2965;
 
@@ -23,8 +24,8 @@
   --text-price: 2.5rem;
   --text-price--line-height: 3.4375rem;
 
-  --text-lead: 1.125rem;
-  --text-lead--line-height: 1.5625rem;
+  --text-subhead: 1.125rem;
+  --text-subhead--line-height: 1.5625rem;
 
   --text-body: 0.9375rem;
   --text-body--line-height: 1.5625rem;
@@ -42,10 +43,94 @@
   }
 
   body {
-    @apply bg-ink text-body text-white;
+    @apply bg-ink text-body font-medium text-white;
   }
 
   button:not(:disabled) {
     @apply cursor-pointer;
+  }
+}
+
+@utility v-focus-ring {
+  @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-current;
+}
+
+@utility v-btn {
+  @apply bg-brand text-panel h-12 rounded-full text-center font-extrabold;
+  @apply motion-safe:transition-[background-color,box-shadow,color] motion-safe:duration-200;
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    @apply inset-ring-brand bg-transparent text-white inset-ring-2;
+  }
+}
+
+@utility v-scroll-dot {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: v-scroll-dot 1.8s ease-in-out infinite;
+  }
+}
+
+@keyframes v-scroll-dot {
+  0% {
+    translate: 0 0;
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75%,
+  100% {
+    translate: 0 10px;
+    opacity: 0;
+  }
+}
+
+@utility v-hero-copy {
+  width: clamp(28.5rem, 40vw + 9.5rem, 45.5rem);
+}
+
+@utility v-hero-art-left {
+  width: clamp(19.5rem, 14vw + 13rem, 25.5rem);
+}
+
+@utility v-hero-art-right {
+  width: clamp(19.5rem, 12vw + 14rem, 24.5rem);
+  background: url("../assets/illustration-hero-right.svg") center / contain
+    no-repeat;
+}
+
+@utility v-hero-squiggle {
+  background: url("../assets/bg-hero-squiggle.svg") center / contain no-repeat;
+}
+
+@utility v-footer-squiggle {
+  background: url("../assets/bg-footer-squiggle.svg") center / contain no-repeat;
+}
+
+@utility v-note {
+  display: none;
+  opacity: 0;
+  translate: 0 -0.5rem;
+
+  &[data-show] {
+    display: block;
+    opacity: 1;
+    translate: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition:
+      opacity 220ms ease-out,
+      translate 220ms ease-out,
+      display 220ms allow-discrete;
+
+    @starting-style {
+      &[data-show] {
+        opacity: 0;
+        translate: 0 -0.5rem;
+      }
+    }
   }
 }
