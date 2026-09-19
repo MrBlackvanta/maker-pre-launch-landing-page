@@ -20,14 +20,15 @@ export default function Hero() {
             width={heroMobile.width}
             height={heroMobile.height}
             fetchPriority="high"
-            className="aspect-[410/233] w-full md:aspect-[8/9]"
+            className="aspect-410/233 w-full md:aspect-8/9"
           />
         </picture>
         <div className="md:v-hero-copy mx-auto mt-12 max-w-143 px-6 text-center md:mt-0 md:max-w-none md:px-0">
           <h1 className="text-display lg:text-display-lg font-extrabold">
             Get paid for the
             <br className="md:hidden" /> work
-            <br className="hidden md:inline" /> you love
+            <br className="hidden md:inline" /> you{" "}
+            <span className="text-brand">love</span>
             <br className="md:hidden" /> to do.
           </h1>
           <p className="text-muted mt-6 lg:mx-auto lg:max-w-135">
