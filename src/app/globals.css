@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@source not "../../*.md";
+
+@theme {
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #080c20;
+  --color-brand: #3ee9e5;
+  --color-panel: #093f68;
+  --color-muted: #777f98;
+  --color-danger: #ff2965;
+}
+
+@layer base {
+  html {
+    @apply overflow-y-scroll;
+  }
+
+  body {
+    @apply bg-ink font-sans text-white;
+  }
+
+  button:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
