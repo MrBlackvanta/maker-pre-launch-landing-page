@@ -17,7 +17,6 @@ const shareImage = {
 
 const manrope = Manrope({
   variable: "--font-manrope",
-  weight: ["500", "800"],
   subsets: ["latin"],
   display: "swap",
 });
